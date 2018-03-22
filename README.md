@@ -1,6 +1,6 @@
 ## BillingCycle
 
-Aplicação web de um CRUD de ciclos de pagamentos.
+Aplicação web de um CRUD de ciclos de pagamentos full javascript backend e frontend.
 
 * <h5>Tecnologias e conceitos utilizados e estudados</h5>
    - AngularJS. <br />
