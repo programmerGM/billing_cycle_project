@@ -1,5 +1,5 @@
 (() => {
-    angular.module('primeiraApp').factory('msgs', [
+    angular.module('billingCycles').factory('msgs', [
         'toastr',
         MsgFactory
     ])

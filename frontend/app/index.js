@@ -1,4 +1,4 @@
-angular.module('primeiraApp', [
+angular.module('billingCycles', [
     'ui.router',
     'ngAnimate',
     'toastr'

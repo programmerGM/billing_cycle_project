@@ -1,5 +1,5 @@
 (() => {
-    angular.module('primeiraApp').component('contentHeader', {
+    angular.module('billingCycles').component('contentHeader', {
         bindings: {
             name: '@',
             small: '@',

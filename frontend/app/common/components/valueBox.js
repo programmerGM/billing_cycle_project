@@ -1,5 +1,5 @@
 (() => {
-    angular.module('primeiraApp').component('valueBox', {
+    angular.module('billingCycles').component('valueBox', {
         bindings: {
             grid: '@',
             colorClass: '@',

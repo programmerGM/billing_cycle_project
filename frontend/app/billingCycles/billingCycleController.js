@@ -1,5 +1,5 @@
 (() => {
-    angular.module('primeiraApp').controller('BillingCycleCtrl', [
+    angular.module('billingCycles').controller('BillingCycleCtrl', [
         '$http',
         'msgs',
         BillingCycleCtrl

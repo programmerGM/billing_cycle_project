@@ -1,7 +1,7 @@
-angular.module('primeiraApp').config([
+angular.module('billingCycles').config([
     '$stateProvider',
     '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider){
+    function($stateProvider, $urlRouterProvider) {
         $stateProvider.state('dashboard', {
             url: '/dashboard',
             templateUrl: '../dashboard/dashboard.html'
