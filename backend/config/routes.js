@@ -1,6 +1,6 @@
 const express = require('express')
 
-module.exports = function(server) {
+module.exports = (server) => {
 
     // API Routes
     const router = express.Router()
