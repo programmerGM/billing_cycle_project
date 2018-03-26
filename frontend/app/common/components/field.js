@@ -1,5 +1,5 @@
 (() => {
-    angular.module('billingCycles').component('field', {
+    angular.module('billingCyclesApp').component('field', {
         bindings: {
             id: '@',
             label: '@',

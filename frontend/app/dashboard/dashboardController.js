@@ -1,14 +1,14 @@
-(function() {
-    angular.module('billingCycles').controller('DashboardCtrl', [
+(() => {
+    angular.module('billingCyclesApp').controller('DashboardCtrl', [
         '$http',
         DashboardController
     ])
 
     function DashboardController($http) {
         const vm = this
-        vm.getSummary = function() {
+        vm.getSummary = () => {
             const url = 'http://localhost:3000/api/billingSummary'
-            $http.get(url).then(function(response) {
+            $http.get(url).then((response) => {
                 const { credit = 0, debt = 0 } = response.data
                 vm.credit = credit
                 vm.debt = debt

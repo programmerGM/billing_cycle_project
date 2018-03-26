@@ -1,5 +1,5 @@
 (() => {
-    angular.module('billingCycles').factory('msgs', [
+    angular.module('billingCyclesApp').factory('msgs', [
         'toastr',
         MsgFactory
     ])

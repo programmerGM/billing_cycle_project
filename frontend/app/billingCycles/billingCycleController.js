@@ -1,5 +1,5 @@
 (() => {
-    angular.module('billingCycles').controller('BillingCycleCtrl', [
+    angular.module('billingCyclesApp').controller('BillingCycleCtrl', [
         '$http',
         'msgs',
         BillingCycleCtrl
