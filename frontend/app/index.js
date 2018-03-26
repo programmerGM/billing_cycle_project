@@ -1,4 +1,4 @@
-angular.module('billingCycles', [
+angular.module('billingCyclesApp', [
     'ui.router',
     'ngAnimate',
     'toastr'
