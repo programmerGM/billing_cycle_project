@@ -21,6 +21,6 @@
             addMsg(msgs, 'Erro', 'error')
         }
 
-        return { addSucess, addError }
+        return { addSuccess, addError }
     }
 })()
