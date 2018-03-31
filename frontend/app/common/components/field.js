@@ -1,21 +1,21 @@
 (() => {
-    angular.module('billingCyclesApp').component('field', {
-        bindings: {
-            id: '@',
-            label: '@',
-            grid: '@',
-            placeholder: '@',
-            type: '@',
-            model: '=',
-            readonly: '<', // A alteração feita no componente não vai refletir no controller
-        },
-        controller: [
-            'gridSystem',
-            function(gridSystem) {
-                this.$onInit = () => this.gridClasses = gridSystem.toCssClasses(this.grid)
-            }
-        ],
-        template: `
+  angular.module('billingCyclesApp').component('field', {
+    bindings: {
+      id: '@',
+      label: '@',
+      grid: '@',
+      placeholder: '@',
+      type: '@',
+      model: '=',
+      readonly: '<', // A alteração feita no componente não vai refletir no controller
+    },
+    controller: [
+      'gridSystem',
+      function (gridSystem) {
+        this.$onInit = () => this.gridClasses = gridSystem.toCssClasses(this.grid)
+      }
+    ],
+    template: `
             <div class="{{ $ctrl.gridClasses }}">
                 <div class="form-group">
                     <label for="{{ $ctrl.id }}">{{ $ctrl.label }}</label>
@@ -25,7 +25,7 @@
                 </div>   
             </div>
         `
-    })
+  })
 })()
 /* 
     Um componente por padrão tem o scopo isolado, os dados inseridos no input não serão

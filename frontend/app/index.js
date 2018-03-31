@@ -1,5 +1,5 @@
 angular.module('billingCyclesApp', [
-    'ui.router',
-    'ngAnimate',
-    'toastr'
+  'ui.router',
+  'ngAnimate',
+  'toastr'
 ])

@@ -12,7 +12,7 @@ server.use(allowCors)
 server.use(queryParser())
 
 server.listen(port, () => {
-    console.log(`BACKEND is running on port ${port}`)
+  console.log(`BACKEND is running on port ${port}`)
 })
 
 module.exports = server

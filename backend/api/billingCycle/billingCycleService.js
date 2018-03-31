@@ -7,31 +7,31 @@ BillingCycle.updateOptions({ new: true, runValidators: true }) // Quando atualiz
 BillingCycle.after('post', sendErrorsOrNext).after('put', sendErrorsOrNext)
 
 function sendErrorsOrNext(req, res, next) {
-    const bundle = res.locals.bundle
+  const bundle = res.locals.bundle
 
-    if (bundle.errors) {
-        var errors = parseErrors(bundle.errors)
-        console.log(errors)
-        res.status(500).json({ errors })
-    } else {
-        next()
-    }
+  if (bundle.errors) {
+    var errors = parseErrors(bundle.errors)
+    console.log(errors)
+    res.status(500).json({ errors })
+  } else {
+    next()
+  }
 }
 
 function parseErrors(nodeRestfulErrors) {
-    const errors = []
-    _.forIn(nodeRestfulErrors, error => errors.push(error.message))
-    return errors
+  const errors = []
+  _.forIn(nodeRestfulErrors, error => errors.push(error.message))
+  return errors
 }
 
 BillingCycle.route('count', (req, res, next) => {
-    BillingCycle.count((error, value) => {
-        if (error) {
-            res.status(500).json({ errors: [error] })
-        } else {
-            res.json({ value })
-        }
-    })
+  BillingCycle.count((error, value) => {
+    if (error) {
+      res.status(500).json({ errors: [error] })
+    } else {
+      res.json({ value })
+    }
+  })
 })
 
 module.exports = BillingCycle

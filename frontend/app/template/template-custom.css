@@ -1,17 +1,17 @@
 html {
-    background-color: #ecf0f5;
+  background-color: #ecf0f5;
 }
 
 .main-footer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 #toastr-container {
-    top: 70px;
+  top: 70px;
 }
 
 .table-actions {
-    width: 140px;
+  width: 140px;
 }
