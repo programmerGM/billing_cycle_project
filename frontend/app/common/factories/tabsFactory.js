@@ -9,7 +9,7 @@
             tabDelete = false
         }){
             owner.tabList = tabList
-            owner.tabCreat = tabCreat
+            owner.tabCreate = tabCreate
             owner.tabUpdate = tabUpdate
             owner.tabDelete = tabDelete
         }
