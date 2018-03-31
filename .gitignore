@@ -3,3 +3,5 @@ frontend/node_modules
 
 backend/*.log
 frontend/*.log
+
+#backend/.env #Em um sistema real esse arquivo não deve ser comitado
