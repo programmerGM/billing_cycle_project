@@ -2,7 +2,8 @@
   angular.module('billingCyclesApp').config([
     '$stateProvider',
     '$urlRouterProvider',
-    ($stateProvider, $urlRouterProvider) => {
+    '$httpProvider',
+    ($stateProvider, $urlRouterProvider, $httpProvider) => {
       $stateProvider.state('dashboard', {
         url: '/dashboard',
         templateUrl: '../dashboard/dashboard.html'
@@ -10,7 +11,39 @@
         url: '/billingCycle?page',
         templateUrl: '../billingCycles/tabs.html'
       })
-      $urlRouterProvider.otherwise('/dashboard')
+      //$urlRouterProvider.otherwise('/dashboard')
+      $httpProvider.interceptors.push('handleResponseError')
     }
   ])
-)()
+)().run([
+  '$rootScope',
+  '$http',
+  '$location',
+  '$window',
+  'auth',
+  function ($rootScope, $http, $location, $window, auth) {
+    validateUser()
+    $rootScope.$on('$locationChangeStart', () => validateUser())
+
+    function validateUser() {
+      const user = auth.getUser()
+      const authPage = '/auth.html'
+      const isAuthPage = $window.location.href.includes(authPage)
+
+      if (!user && !isAuthPage) {
+        $window.location.href = authPage
+      } else if (user && !user.isValid) {
+        console.log('token: ' + user.token)
+        auth.validateToken(user.token, (err, valid) => {
+          if (!valid) {
+            $window.location.href = authPage
+          } else {
+            user.isValid = true
+            $http.defaults.headers.common.Authorization = user.token
+            isAuthPage ? $window.location.href = '/' : $location.path('/')
+          }
+        })
+      }
+    }
+  }
+])

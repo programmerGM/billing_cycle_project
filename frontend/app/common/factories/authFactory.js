@@ -63,5 +63,4 @@
 
     return { signup, login, logout, getUser, validateToken }
   }
-
 })()
